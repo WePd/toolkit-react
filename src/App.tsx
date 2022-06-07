@@ -5,12 +5,12 @@ import { AppDispatch, RootState } from "./store"
 import { increment, decrement, asyncIncrem } from "./store/reducer/countReducer"
 
 function App() {
-  const state = useSelector((state: RootState) => state.counter.value)
+  const { value } = useSelector((state: RootState) => state.counter)
   const dispatch: AppDispatch = useDispatch()
 
   return (
     <div className="App">
-      <h2>{state}</h2>
+      <h2>{value}</h2>
       <hr />
       <button onClick={() => dispatch(increment())}>+1</button>
       <button onClick={() => dispatch(decrement())}>-1</button>
